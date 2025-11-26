@@ -44,8 +44,8 @@ def default_interrogator(image, threshold=0.35, character_threshold=0.85, exclud
         model = global_model
     else:
         # assert 'CUDAExecutionProvider' in ort.get_available_providers(), 'CUDA Install Failed!'
-        # model = InferenceSession(model_onnx_filename, providers=['CUDAExecutionProvider'])
-        model = InferenceSession(model_onnx_filename, providers=['CPUExecutionProvider'])
+        model = InferenceSession(model_onnx_filename, providers=['CUDAExecutionProvider'])
+        #model = InferenceSession(model_onnx_filename, providers=['CPUExecutionProvider'])
         global_model = model
 
     input = model.get_inputs()[0]
